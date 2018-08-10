@@ -1,39 +1,24 @@
 from sense_hat import SenseHat
 import time
 from datetime import datetime
-import sqlite3
+import db_manager
+import calibrate_temperature
 
-dbname='sensehat.db'
+dbpath='./db/sense_humidity.db'
 
 s = SenseHat()
 
-def logData(temp,humidity):
-    connection = sqlite3.connect(dbname)
-    curs = connection.cursor()
-    curs.execute("INSERT INTO SENSEHAT_data values(datetime('now'),(?),(?))",(temp,humidity))
-    connection.commit()
-    connection.close()
-
-def displayData():
-    conn=sqlite3.connect(dbname)
-    curs=conn.cursor()
-    print ("\nEntire database contents:\n")
-    for row in curs.execute("SELECT * FROM SenseHat_data"):
-        print (row)
-    conn.close()
-
+db = db_manager.SenseHatDatabase(dbpath)
 
 humidity = round(s.get_humidity(),1)
-temperature = round(s.get_temperature(),1)
-temp_of_humidity  = s.get_temperature_from_humidity()
-logData(temperature,humidity)
-displayData()
-print(datetime.now())
+temperature = calibrate_temperature.actual_temperature()
+
+db.logData(temperature,humidity)
+db.displayData()
+
+print()
+print(datetime.now().ctime())
+print("..............")
 print("Humidity: %s" % humidity)
 print("Temperature: %s" % temperature)
-print("Temperature of Humidity: %s" % temp_of_humidity)
 print("..............")
-time.sleep(4)
-
-
-
