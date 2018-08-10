@@ -1,0 +1,15 @@
+.navigation {
+    width: 100%;
+    background-color: #454545;
+    margin: 0px;
+    padding: 10px;
+    padding-left: 20px;
+    margin-right: 5px;
+    margin-left: 5px;
+    overflow: hidden;
+}
+
+.title {
+    color : #ffffff;
+    font-family: 'Courier New';
+}

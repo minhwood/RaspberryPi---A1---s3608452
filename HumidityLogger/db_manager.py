@@ -19,4 +19,11 @@ class SenseHatDatabase:
             print (row)
         connection.close()
 
-    
+    def getAllData(self):
+        connection=sqlite3.connect(self.dbpath)
+        curs= connection.cursor()
+        curs.execute("SELECT * FROM SENSEHAT_data")
+        data = curs.fetchall()
+        connection.close()
+        return data
+        
