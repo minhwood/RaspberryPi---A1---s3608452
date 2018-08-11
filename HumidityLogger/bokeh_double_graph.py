@@ -1,4 +1,3 @@
-
 from bokeh.plotting import figure, output_file, save
 from datetime import datetime
 from bokeh.models import DatetimeTickFormatter
@@ -37,7 +36,8 @@ def draw_graph(data):
             minutes = ['%d %B %Y at %H:%M'],
             hourmin = ['%d %B %Y at %H:%M'],
             days = ['%d %B %Y'],
-            months = ['%d %B %Y'],                                                          years = ['%d %B %Y']
+            months = ['%d %B %Y'],
+            years = ['%d %B %Y']
         )
     p2.legend.location = "top_left"
     p2.xaxis.major_label_orientation = pi/3
