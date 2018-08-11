@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from sense_hat import SenseHat
 import time
 from datetime import datetime
