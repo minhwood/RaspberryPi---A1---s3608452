@@ -6,10 +6,9 @@ db = db_manager.SenseHatDatabase("./db/sense_humidity.db")
 data = db.getAllData()
 
 print(data)
-for row in data:
-    time = datetime.datetime.strptime(row[0],"%Y-%m-%d %H:%M:%S")
-    print(time.ctime())
+for i in range(0,len(data['time'])):
+    print(data['time'][i])
     print("..............")
-    print("Humidity: %s" % row[2])
-    print("Temperature: %s" % row[1])
+    print("Humidity: %s" % data['humid'][i])
+    print("Temperature: %s" % data['temp'][i])
     print("..............")
