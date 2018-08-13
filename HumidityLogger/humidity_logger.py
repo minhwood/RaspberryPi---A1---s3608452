@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# more info: https://pypi.org/project/python-crontab/
 from sense_hat import SenseHat
 import time
 from datetime import datetime

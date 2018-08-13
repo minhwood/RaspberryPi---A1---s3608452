@@ -13,7 +13,9 @@ def actual_temperature():
 
     avg_temp = s.get_temperature()
     cpu_temp = cpu_temperature()
-
-    cali_temp = avg_temp - ((cpu_temp - avg_temp) / 5.466)
+    #cali_temp = avg_temp - ((cpu_temp - avg_temp) / 5.466)
+    #cali_temp = avg_temp - (cpu_temp-avg_temp)
+    #cali_temp = avg_temp - ((cpu_temp-avg_temp)/5.466)-6
+    cali_temp = avg_temp - ((cpu_temp -avg_temp)/1.5)
     cali_temp = round(cali_temp,1)
     return cali_temp

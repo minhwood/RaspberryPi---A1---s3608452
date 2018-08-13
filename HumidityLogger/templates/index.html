@@ -11,6 +11,7 @@
 <body>
     <div class="navigation"><h2 class= "title" >RaspberryPi Temperature and Humidity Measurement Record Graph</h2></div>
     <h3>Now is {{ time }}</h3>
+    <a href='{{url_for('newlog')}}' >New Log</a>
     {% for row in data %}
         <h5>Time:{{row[0]}}, Temperature:{{row[1]}}, Humidity:{{row[2]}}</h5>
     {% endfor %}

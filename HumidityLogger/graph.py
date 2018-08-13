@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 
 import datetime
 import db_manager
@@ -17,6 +17,12 @@ def graph():
         'time': now
         }
     return render_template('index.html', **data_output)
+
+@app.route('/newlog')
+def newlog():
+    print('redirect')
+    return redirect(url_for('graph'))
+
 
 if __name__ == '__main__':
     app.run(debug=True, port=80, host='0.0.0.0')
