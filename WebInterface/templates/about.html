@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Temperature and Humidity  Graph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static',filename='styles/style.css') }}" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <div class="title-bar">
+        <h2 class= "title" >Temperature and Humidity Record System</h2>
+    </div>
+    <div class= "main-content">
+        <ul>
+            <h3>Now is {{ time }}</h3>
+	    <li><a class="active" href='{{url_for('about')}}'>About</a></li>
+            <li><a  href='{{url_for('humid_graph')}}'>Humidity</a></li>
+            <li><a href='{{url_for('temp_graph')}}'>Temperature</a></li>
+            <li class="button"><a href='{{url_for('sendNotification')}}' >Temperature Notification</a></li>
+        </ul>
+        <div class="graph">
+            <h2>About</h2>
+            <h3>Product developed for Programming IoT course - RMIT</h3>
+            <h3>Developed by Minh Doan Quang</h3>
+            <h3>Student number: s3608452</h3>
+        </div>
+    </div>
+</body>
+</html>

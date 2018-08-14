@@ -5,8 +5,8 @@ from bokeh.models import DatetimeTickFormatter
 from math import pi
 from bokeh.layouts import gridplot
 
-def draw_graph(data):
-    #Temperature Graph
+#Temperature graph
+def draw_temp_graph(data):
     p1 = figure(x_axis_type = "datetime", title="Temperature Record" ,plot_width=600, plot_height=600)
     p1.xaxis.axis_label = 'Time'
     p1.yaxis.axis_label = 'Temperature'
@@ -23,9 +23,11 @@ def draw_graph(data):
         )
     p1.legend.location = "top_left"
     p1.xaxis.major_label_orientation = pi/3
+    output_file('./templates/temp_graph.html')
+    save(p1)
 
-
-    # Humidity Graph
+# Humidity graph
+def draw_humid_graph(data):
     p2 = figure(x_axis_type="datetime", title="Humidity Record" ,plot_width=600, plot_height=600)
     p2.xaxis.axis_label = 'Time'
     p2.yaxis.axis_label = 'Humidity'
@@ -42,6 +44,5 @@ def draw_graph(data):
         )
     p2.legend.location = "top_left"
     p2.xaxis.major_label_orientation = pi/3
-
-    output_file('./templates/graph.html')
-    save(gridplot([[p1],[p2]], plot_width = 600, plot_height = 600))
+    output_file('./templates/humid_graph.html')
+    save(p2)

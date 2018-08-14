@@ -1,15 +1,83 @@
-.navigation {
+html,body {
+    margin: 0;
+    padding: 0;
+}
+
+.title-bar {
     width: 100%;
     background-color: #454545;
     margin: 0px;
     padding: 10px;
     padding-left: 20px;
-    margin-right: 5px;
-    margin-left: 5px;
-    overflow: hidden;
+    box-shadow: 0 4px 8px #888888, 0 6px 20px 0 #888888;
+    position: fixed;
+    height: 60px;
+    z-index: 1;
+}
+
+.main-content{
+    font-family: 'Courier New';
+}
+
+ul {
+    list-style-type: none;
+    padding: 15px;
+    width: 200px;
+    background-color: #ededed;
+    border: 1px solid #ccc7c7;
+    position: fixed;
+    height: 100%;
+    padding-top: 80px;
+    z-index: 0;
+}
+
+li {
+    border-bottom: 2px solid #ccc7c7;
+}
+
+li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li a.active {
+    background-color: #43c662;
+    color: #ffffff;
+}
+
+li a:hover:not(.active) {
+    background-color: #555;
+    color: #ffffff;
+}
+
+.button {
+    margin-top: 50px;
+    width: 200px;
+    border-radius: 20px;
+    text-align: center;
+    background-color: #555;
+}
+
+.button a:hover:not(.active) {
+    text-align: center;
+    border-radius: 20px;
+    background-color: #43c662;
+}
+
+.button a {
+    padding: 10px 10px;
+    color:#ffffff;
 }
 
 .title {
     color : #ffffff;
     font-family: 'Courier New';
+}
+
+.graph {
+    margin-left: 270px;
+    padding-top: 100px;
+    padding-left: 100px;
 }

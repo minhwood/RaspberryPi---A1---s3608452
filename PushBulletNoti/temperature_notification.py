@@ -8,16 +8,14 @@ import json
 import requests
 import calibrate_temperature
 
-#Specific API-key (change to send to different devices)
-API_KEY="o.kQ8eA9aCX4VK1lasbe84Hdi1wgJI4lmN"
-
-#Limit temperature(Celcisus) - above this temp is mean cool
+#temperature limit if lower then is mean the weather is cool
 TEMPERATURE_LIMIT = 20
 
-#main function
 def main():
     room_temp_check(TEMPERATURE_LIMIT)
 
+#Specific API-key (change to send to different devices)
+API_KEY="o.kQ8eA9aCX4VK1lasbe84Hdi1wgJI4lmN"
 
 #function to push a notification to other device 
 def push_notification(title, body):
