@@ -1,3 +1,4 @@
+#!/usr/env/bin python3
 from bokeh.plotting import figure, output_file, save
 from datetime import datetime
 from bokeh.models import DatetimeTickFormatter
@@ -43,4 +44,4 @@ def draw_graph(data):
     p2.xaxis.major_label_orientation = pi/3
 
     output_file('./templates/graph.html')
-    save(gridplot([[p1,p2]], plot_width = 600, plot_height = 600))
+    save(gridplot([[p1],[p2]], plot_width = 600, plot_height = 600))
