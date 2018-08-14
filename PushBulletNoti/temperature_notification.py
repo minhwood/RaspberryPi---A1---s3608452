@@ -21,12 +21,13 @@ def main():
 
 #function to push a notification to other device 
 def push_notification(title, body):
+    #data will be send
     data_send = {"type": "note", "title": title, "body": body}
     #send a post request to the pushbullet sever (create-push)
     resp = requests.post('https://api.pushbullet.com/v2/pushes', data=json.dumps(data_send),
                          headers={'Authorization': 'Bearer ' + API_KEY, 
                          'Content-Type': 'application/json'})
-    
+    #throw exception if the response is not OK(200) 
     if resp.status_code != 200:
         raise Exception('Something wrong')
     else:

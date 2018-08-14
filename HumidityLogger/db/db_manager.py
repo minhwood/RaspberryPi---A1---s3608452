@@ -2,21 +2,25 @@
 import sqlite3
 import datetime
 
+#function use to convert datetime value in database to datetime value in python
 def convertStrToTime(string_time): 
     time = datetime.datetime.strptime(string_time, "%Y-%m-%d %H:%M:%S")
     return time
 
+#class use to manage the database
 class SenseHatDatabase:
     def __init__(self, dbpath):
         self.dbpath = dbpath
     
+    #save data to the database
     def logData(self,temp,humidity):
         connection = sqlite3.connect(self.dbpath)
         curs = connection.cursor()
         curs.execute("INSERT INTO SENSEHAT_data values(datetime('now','localtime'),(?),(?))",(temp,humidity))
         connection.commit()
         connection.close()
-
+    
+    #display all data in the database
     def displayData(self):
         connection=sqlite3.connect(self.dbpath)
         curs=connection.cursor()
@@ -24,7 +28,8 @@ class SenseHatDatabase:
         for row in curs.execute("SELECT * FROM SENSEHAT_data"):
             print (row)
         connection.close()
-
+    
+    #return all data in a dictionary type
     def getAllData(self):
         time = []
         temp = []
