@@ -39,7 +39,12 @@ def temp_graph():
             }
     return render_template('temperature.html', **data_output)
 
-@app.route('/sendNotification')
+@app.route('/record_current_humid_temp')
+def record_humid_temp():
+    os.system('/home/pi/RaspberryPi---A1---s3608452/HumidityLogger/humidity_logger.py')
+    return redirect(url_for('humid_graph'))
+
+@app.route('/send_notification')
 def sendNotification():
     os.system('/home/pi/RaspberryPi---A1---s3608452/PushBulletNoti/temperature_notification.py')
     return redirect(url_for('temp_graph'))
