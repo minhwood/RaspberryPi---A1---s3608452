@@ -9,11 +9,13 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <div class="title-bar">
-        <h2 class= "title" >Temperature and Humidity Record System</h2>
-    </div>
+    <ul class="title-bar">
+            <h2 style="float:left" class = "title"> My Raspberry Pi </h2>
+            <li><a href='{{url_for('about')}}' class="active">Record Graph</a></li>
+	    <li><a href='{{url_for('home')}}'>Home</a></li>
+    </ul>
     <div class= "main-content">
-        <ul>
+        <ul class = "navigation">
             <h3>Now is {{ time }}</h3>
 	    <li><a href='{{url_for('about')}}'>About</a></li>
             <li><a class="active" href='{{url_for('humid_graph')}}'>Humidity</a></li>

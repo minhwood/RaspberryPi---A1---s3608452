@@ -12,6 +12,14 @@ db = db_manager.SenseHatDatabase(db_path)
 app = Flask(__name__)
 
 @app.route('/')
+def home():
+    now = datetime.datetime.now().ctime()
+    data_output = {
+            'time': now
+            }
+    return render_template('home.html', **data_output)
+
+@app.route('/about')
 def about():
     now = datetime.datetime.now().ctime()
     data_output = {

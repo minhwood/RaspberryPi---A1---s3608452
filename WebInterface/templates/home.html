@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Temperature and Humidity  Graph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static',filename='styles/style.css') }}" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <ul class="title-bar">
+        <h2 style="float:left" class = "title"> My Raspberry Pi </h2>
+        <li><a href='{{url_for('about')}}'>Record Graph</a></li>
+        <li><a href='{{url_for('home')}}' class="active">Home</a></li>
+    </ul>
+    <div class= "main-content">
+        <div class="graph">
+            <img src="/static/avatar.jpg" style="width:250px;height:250px;"></img>
+            <h3>Developed by Minh Doan Quang</h3>
+            <h3>Student number: s3608452</h3>
+            <h3>Product developed for Programming IoT course </h3>
+            <h3>RMIT - 2018 Semester 2</h3>
+        </div>
+    </div>
+</body>
+</html>

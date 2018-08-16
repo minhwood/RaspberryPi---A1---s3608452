@@ -5,21 +5,46 @@ html,body {
 
 .title-bar {
     width: 100%;
+    font-family: 'Courier New';
+    list-style-type: none;
     background-color: #454545;
     margin: 0px;
-    padding: 10px;
     padding-left: 20px;
     box-shadow: 0 4px 8px #888888, 0 6px 20px 0 #888888;
     position: fixed;
-    height: 60px;
+    overflow: hidden;
+    height: 70px;
     z-index: 1;
+}
+
+.title-bar li {
+    float: right;
+    width: 180px;
+    z-index: 1;
+}
+
+.title-bar li a{
+    display: block;
+    height: 26px;
+    color: #ffffff;
+    text-decoration: none;
+    text-align: center;
+    padding: 20px 20px;
+}
+
+.title-bar li a:hover {
+    border-bottom: 4px solid #ffffff;
+}
+
+.title-bar li a.active {
+    border-bottom: 4px solid #ffffff;
 }
 
 .main-content{
     font-family: 'Courier New';
 }
 
-ul {
+.navigation {
     list-style-type: none;
     padding: 15px;
     width: 200px;
@@ -31,28 +56,28 @@ ul {
     z-index: 0;
 }
 
-li {
+.navigation li {
     border-bottom: 2px solid #ccc7c7;
 }
 
-li a {
+.navigation li a {
     display: block;
     color: #000;
     padding: 8px 16px;
     text-decoration: none;
 }
 
-li a.active {
+.navigation li a.active {
     background-color: #43c662;
     color: #ffffff;
 }
 
-li a:hover:not(.active) {
+.navigation li a:hover:not(.active) {
     background-color: #555;
     color: #ffffff;
 }
 
-.button {
+.navigation .button {
     margin-top: 50px;
     width: 200px;
     border-radius: 20px;
@@ -60,24 +85,22 @@ li a:hover:not(.active) {
     background-color: #555;
 }
 
-.button a:hover:not(.active) {
+.navigation .button a:hover:not(.active) {
     text-align: center;
     border-radius: 20px;
     background-color: #43c662;
 }
 
-.button a {
+.navigation .button a {
     padding: 10px 10px;
     color:#ffffff;
 }
 
 .title {
     color : #ffffff;
-    font-family: 'Courier New';
 }
 
 .graph {
-    margin-left: 270px;
     padding-top: 100px;
-    padding-left: 100px;
+    padding-left: 450px;
 }

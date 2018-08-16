@@ -12,7 +12,6 @@ def draw_temp_graph(data):
     p1 = figure(x_axis_type = "datetime", title="Temperature Record" ,plot_width=600, plot_height=600)
     p1.xaxis.axis_label = 'Time'
     p1.yaxis.axis_label = 'Temperature'
-    p1.circle( data['time'], data['temp'], color='#0080FF' , legend='Temperature', size = 8)
     p1.line( data['time'], data['temp'], color='#0080FF',legend='Temperature', line_width=2)
     p1.xaxis.formatter=DatetimeTickFormatter(
             minsec = ['%d %B %Y at %H:%M'],
@@ -33,7 +32,6 @@ def draw_humid_graph(data):
     p2 = figure(x_axis_type="datetime", title="Humidity Record" ,plot_width=600, plot_height=600)
     p2.xaxis.axis_label = 'Time'
     p2.yaxis.axis_label = 'Humidity'
-    p2.circle( data['time'], data['humid'], color='#B2DF8A', legend='Humidity', size = 8)
     p2.line( data['time'], data['humid'], color='#B2DF8A', legend='Humidity', line_width=2 )
     p2.xaxis.formatter=DatetimeTickFormatter(
             minsec = ['%d %B %Y at %H:%M'],

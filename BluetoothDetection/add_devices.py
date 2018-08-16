@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sys
 sys.path.insert(0,'/home/pi/RaspberryPi---A1---s3608452/BluetoothDetection/RegisteredDevicesDB')
 import regisdevice_db_manager
