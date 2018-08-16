@@ -19,7 +19,6 @@
 	    <li><a href='{{url_for('humid_graph')}}'>Humidity</a></li>
 	    <li><a href='{{url_for('temp_graph')}}' class='active' >Temperature</a></li>
 	    <li class="button"><a href='{{url_for('record_humid_temp')}}'>Record Current Humidity and Temperature</a></li>
-	    <li class="button"><a href='{{url_for('sendNotification')}}' >Temperature Notification</a></li>
         </ul>
         <div class="graph">
             {% include 'temp_graph.html' %}
