@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Temperature and Humidity  Graph</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="{{ url_for('static',filename='styles/style.css') }}" />
+    <script src="main.js"></script>
+</head>
+<body>
+    <ul class="title-bar">
+        <h2 style="float:left" class = "title"> My Raspberry Pi </h2>
+        <li><a href='{{url_for('templimit')}}' class="active" >Pushbullet Notification</a></li>
+        <li><a href='{{url_for('humid_graph')}}'>Record Graph</a></li>
+        <li><a href='{{url_for('home')}}'>Home</a></li>
+    </ul>
+    <div class= "main-content">
+        <ul class= "navigation">
+            <h3>Now is {{ time }}</h3>
+            <li><a href='{{url_for('templimit')}}' class='active' >Temperature Limit</a></li>
+            <li><a href='{{url_for('apikey')}}'>API key</a></li>
+            <li><a href='{{url_for('delaytime')}}'>Delay time</a></li>
+        </ul>
+        <div class="graph">
+            <h3>Your current temperature limit:{{ templimit }}'C</h3>
+            <form method="POST" action='{{url_for('templimit')}}'>
+                <div>
+                    <input type="number" name="templimit" class="input">
+                </div>
+                <input class="button" type="submit" value="Change">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
