@@ -9,27 +9,20 @@ import requests
 import calibrate_temperature
 import configparser
 import time
+import config_pushbullet_noti
+
 #temperature limit if lower then is mean the weather is cool
-temp_limit = 0
+temp_limit = config_pushbullet_noti.get_temp_limit()
 #push-bullet api
-api_key = "o.kQ8eA9aCX4VK1lasbe84Hdi1wgJI4lmN"
+api_key = config_pushbullet_noti.get_api_key()
 #delay  after notify devices
-delay_time = 0
+delay_time = config_pushbullet_noti.get_delay_time()
 
 def main():
-    get_setting()
     room_temp_check(temp_limit)
 
-#get value from config file
-def get_setting():
-    config = configparser.ConfigParser()
-    config.read('config.ini')
-    temp_limit = int(config.get('setting','temp_limit'))
-    api_key = config.get('setting','api_key')
-    delay_time = int(config.get('setting','delay_time'))
-
 #function to push a notification to other device 
-def push_notification(title, body):
+def push_notification(title, body):    
     #data will be send
     data_send = {"type": "note", "title": title, "body": body}
     #send a post request to the pushbullet sever (create-push)
