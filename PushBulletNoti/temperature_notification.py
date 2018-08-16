@@ -7,7 +7,6 @@ import os
 import json
 import requests
 import calibrate_temperature
-import configparser
 import time
 import config_pushbullet_noti
 
