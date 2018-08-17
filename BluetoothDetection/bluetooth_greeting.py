@@ -18,7 +18,7 @@ def detect_nearby_registered_devices():
     s=SenseHat()
     registered_devices = db.getAllDevices()
     while True:
-        print("Scanning...")
+        s.show_message("Scanning")
         nearby_devices = bluetooth.discover_devices()
         for mac_address in nearby_devices:
             #each mac address detect check if is match to any in the database

@@ -3,7 +3,6 @@ from bokeh.plotting import figure, output_file, save
 from datetime import datetime
 from bokeh.models import DatetimeTickFormatter
 from math import pi
-from bokeh.layouts import gridplot
 from bokeh.palettes import Spectral6
 from bokeh.transform import linear_cmap
 
@@ -12,7 +11,7 @@ def draw_temp_graph(data):
     p1 = figure(x_axis_type = "datetime", title="Temperature Record" ,plot_width=600, plot_height=600)
     p1.xaxis.axis_label = 'Time'
     p1.yaxis.axis_label = 'Temperature'
-    p1.line( data['time'], data['temp'], color='#0080FF',legend='Temperature', line_width=2)
+    p1.line( data['time'], data['temp'], color='#0080FF', legend='Temperature', line_width=2)
     p1.xaxis.formatter=DatetimeTickFormatter(
             minsec = ['%d %B %Y at %H:%M'],
             hours=["%d %B %Y at %H:%M"],
@@ -24,7 +23,7 @@ def draw_temp_graph(data):
         )
     p1.legend.location = "top_left"
     p1.xaxis.major_label_orientation = pi/3
-    output_file('./templates/temp_graph.html')
+    output_file('/home/pi/RaspberryPi---A1---s3608452/WebInterface/templates/HumidityLogger/temp_graph.html')
     save(p1)
 
 # Humidity graph
@@ -44,5 +43,5 @@ def draw_humid_graph(data):
         )
     p2.legend.location = "top_left"
     p2.xaxis.major_label_orientation = pi/3
-    output_file('./templates/humid_graph.html')
+    output_file('/home/pi/RaspberryPi---A1---s3608452/WebInterface/templates/HumidityLogger/humid_graph.html')
     save(p2)

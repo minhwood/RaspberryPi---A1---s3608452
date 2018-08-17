@@ -77,12 +77,29 @@ html,body {
     color: #ffffff;
 }
 
-.navigation .button {
-    margin-top: 50px;
+.button {
+    margin-top: 40px;
     width: 200px;
     border-radius: 20px;
     text-align: center;
     background-color: #555;
+    color: #ffffff;
+    border: none;
+    padding: 10px 10px;
+}
+
+.input {
+    height: 45px;
+    width: 500px;
+    border-radius: 20px;
+}
+
+.navigation .button {
+    padding:0px 0px !important;
+}
+
+.button:hover{
+    background-color: #43c662;
 }
 
 .navigation .button a:hover:not(.active) {
@@ -103,4 +120,8 @@ html,body {
 .graph {
     padding-top: 100px;
     padding-left: 450px;
+}
+
+table, th, td {
+	border: 1px solid #43c662;
 }

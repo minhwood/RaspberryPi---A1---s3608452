@@ -11,25 +11,25 @@
 <body>
     <ul class="title-bar">
         <h2 style="float:left" class = "title"> My Raspberry Pi </h2>
-	<li><a href='{{url_for('registereddevices')}}'>Bluetooth Detection</a></li>
-        <li><a href='{{url_for('templimit')}}' class="active" >Pushbullet Notification</a></li>
+        <li><a href='{{url_for('registereddevices')}}' class="active">Bluetooth Detection</a></li>
+        <li><a href='{{url_for('templimit')}}'>Pushbullet Notification</a></li>
         <li><a href='{{url_for('humid_graph')}}'>Record Graph</a></li>
         <li><a href='{{url_for('home')}}'>Home</a></li>
     </ul>
     <div class= "main-content">
         <ul class= "navigation">
             <h3>Now is {{ time }}</h3>
-            <li><a href='{{url_for('templimit')}}'>Temperature Limit</a></li>
-            <li><a href='{{url_for('apikey')}}' class = "active">API key</a></li>
-            <li><a href='{{url_for('delaytime')}}'>Delay time</a></li>
+            <li><a href='{{url_for('registereddevices')}}'>Registered devices</a></li>
+            <li><a href='{{url_for('adddevice')}}' class = "active">Add device</a></li>
         </ul>
         <div class="graph">
-            <h3>Your current API-KEY :{{ api_key }}</h3>
-            <form method="POST" action='{{url_for('delaytime')}}'>
+            <h3>Register your device:</h3>
+            <form method="POST" action='{{url_for('adddevice')}}'>
                 <div>
-                    <input type="text" name="api_key" class="input">
+		    <input type="text" name="name" class="input" placeholder="Device name"><br>
+                    <input type="text" name="mac_address" class="input" placeholder="Device Mac Adress">
                 </div>
-                <input class="button" type="submit" value="Change">
+                <input class="button" type="submit" value="Add">
             </form>
         </div>
     </div>
