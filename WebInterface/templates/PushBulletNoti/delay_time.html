@@ -27,7 +27,7 @@
 		<h3>Your current delay time is :{{ delay_time }} secs</h3>
             <form method="POST" action='{{url_for('delaytime')}}'>
                 <div>
-                    <input type="text" name="delay_time" class="input">
+                    <input type="number" name="delay_time" class="input">
                 </div>
                 <input class="button" type="submit" value="Change">
             </form>

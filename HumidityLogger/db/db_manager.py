@@ -19,16 +19,7 @@ class SenseHatDatabase:
         curs.execute("INSERT INTO SENSEHAT_data values(datetime('now','localtime'),(?),(?))",(temp,humidity))
         connection.commit()
         connection.close()
-    
-    #display all data in the database
-    def displayData(self):
-        connection=sqlite3.connect(self.dbpath)
-        curs=connection.cursor()
-        print ("\nEntire database contents:\n")
-        for row in curs.execute("SELECT * FROM SENSEHAT_data"):
-            print (row)
-        connection.close()
-    
+
     #return all data in a dictionary type
     def getAllData(self):
         time = []

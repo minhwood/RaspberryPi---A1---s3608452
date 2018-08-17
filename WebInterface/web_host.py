@@ -28,7 +28,7 @@ def home():
             }
     return render_template('home.html', **data_output)
 
-#Web interface for task1 , humidity record graph
+#HumidityLogger--------------------------------------------------------------
 @app.route('/humidity')
 def humid_graph():
     now = datetime.datetime.now().ctime()
@@ -54,7 +54,7 @@ def record_humid_temp():
     os.system('/home/pi/RaspberryPi---A1---s3608452/HumidityLogger/humidity_logger.py')
     return redirect(url_for('humid_graph'))
 
-#PushBullet Notification web interface
+#PushBullet Notification ------------------------------------------------------
 @app.route('/templimit', methods=['GET','POST'])
 def templimit():
     now = datetime.datetime.now().ctime()
@@ -94,7 +94,7 @@ def delaytime():
             }
     return render_template('/PushBulletNoti/delay_time.html', **data_output)
 
-#Bluetooth Detection UI 
+#Bluetooth Detection -------------------------------------------------------------- 
 @app.route('/adddevice', methods=['GET','POST'])
 def adddevice():
     now = datetime.datetime.now().ctime()
@@ -118,4 +118,4 @@ def registereddevices():
     return render_template('BluetoothDetection/registereddevices.html',**data_output)
 
 if __name__ == '__main__':
-    app.run(debug=True, port=80, host='0.0.0.0')
+    app.run(debug=False, port=80, host='0.0.0.0')

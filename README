@@ -1,1 +1,41 @@
+This application developed by Minh Doan Quang
+Student Number: s3608452
+Product developed for Programming IOT course
+RMIT - 2018 Semester 2
 
+The application have 3 part:
+	HumidityLogger: A humidity automatic record system
+	PushBulletNotification: Automatic sense the temperature and notice the user through their devices
+	BluetoothDetection: Detect registered bluetooth devices around and greet
+
+/CalibrateTemperature/calibrate_temperature.py
+A py script calculate the actual temperature around sense hat
+
+/HumidityLogger
+- /humidity_logger.py
+	script that record the humidity and save to the database
+- /db 
+	folder including db related file
+	- /create_humidity_db.py script to create the table to store humidity record
+	- /db_manager.py script including function allow to interact with database
+
+/PushBulletNoti
+- /temperature_notification.py
+	script that continuosly record temperature around and notice user when it become too cold
+- /config.ini config file for temperature_notification.py to run
+- /config_pushbullet_noti.py script including function allow to get, set the varrible in config.ini
+
+/BluetoothDetection
+- /add_devices.py
+	script allow user to registered devices in unix interface
+- /bluetooth_greeting.py
+	script that detect registered devices around and greet
+-/RegisteredDevicesDB
+	folder including registered devices database related file
+	- /create_registered_devices_db.py script to create the table to store registered devices
+	- /regisdevice_db_manager.py script including function allow to interact with registered devices database
+	
+/WebInterface
+Folder store a flask web base sever
+- web-host.py python script to host the web sever (Flask)
+- graph.py python script to draw graph represent humidity record database

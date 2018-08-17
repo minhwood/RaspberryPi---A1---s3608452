@@ -17,7 +17,6 @@ def main():
 
 def record_current_humid_temp():
     s = SenseHat()
-    s.show_message("recording...")
     #create an SenseHatDatabase object to manage the SENSEHAT_data database
     db = db_manager.SenseHatDatabase(dbpath)
     humidity = round(s.get_humidity(),1)
@@ -25,11 +24,4 @@ def record_current_humid_temp():
 
     #Save the data to the database
     db.logData(temperature,humidity)
-
-    print(datetime.now().ctime())
-    print("..............")
-    print("Humidity: %s" % humidity)
-    print("Temperature: %s" % temperature)
-    print("..............")
-
 main()
